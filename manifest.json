@@ -1,0 +1,7 @@
+{
+  "name": "Bufferclick Test",
+  "description": "Registers the /testing command",
+  "author": "YourName",
+  "main": "index.js"
+}
+
