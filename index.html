@@ -9,7 +9,7 @@
   <meta property="og:title" content="III — Infrequent, Insufficient or Inadequate?" />
   <meta property="og:description" content="Batch your project files into clipboard-ready chunks. No uploads. No servers. Pure client-side magic. Made by BufferClick." />
   <meta property="og:image" content="https://freesvg.org/img/Folder-1.png" />
-  <meta property="og:url" content="https://iii.pages.dev" />
+  <meta property="og:url" content="https://infrequent.pages.dev" />
   <meta property="og:site_name" content="III by BufferClick" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="III — Infrequent, Insufficient or Inadequate?" />
@@ -161,7 +161,7 @@
       <p style="font-size:13px;color:var(--text2);margin-bottom:12px;">Add this single script tag to your HTML and you're ready to go:</p>
       <div class="docs-code-block">
         <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
-        <pre>&lt;script src="https://iii.pages.dev/main.js"&gt;&lt;/script&gt;</pre>
+        <pre>&lt;script src="https://infrequent.pages.dev/main.js"&gt;&lt;/script&gt;</pre>
       </div>
       <p style="font-size:13px;color:var(--text2);margin-bottom:12px;">Then use the API:</p>
       <div class="docs-code-block">
@@ -225,7 +225,6 @@ input.addEventListener('change', async () => {
 
     <div id="docsContent">
 
-      <!-- OVERVIEW -->
       <div class="docs-section" id="overview">
         <h2>Overview</h2>
         <p>The III API lets you integrate III's file batching engine into any website. It is <strong>100% client-side</strong> — no files are ever uploaded to any server. Everything runs in the user's browser.</p>
@@ -252,17 +251,16 @@ input.addEventListener('change', async () => {
         </ul>
       </div>
 
-      <!-- INSTALLATION -->
       <div class="docs-section" id="installation">
         <h2>Installation</h2>
         <h3>Option 1: Script Tag (CDN)</h3>
         <p>Add this to your HTML <code>&lt;head&gt;</code> or before <code>&lt;/body&gt;</code>:</p>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
-          <pre>&lt;script src="https://iii.pages.dev/main.js"&gt;&lt;/script&gt;</pre>
+          <pre>&lt;script src="https://infrequent.pages.dev/main.js"&gt;&lt;/script&gt;</pre>
         </div>
         <h3>Option 2: Download and Self-Host</h3>
-        <p>Download <code>main.js</code> from <a href="/main.js" style="color:var(--cyan)">iii.pages.dev/main.js</a> and include it locally:</p>
+        <p>Download <code>main.js</code> from <a href="/main.js" style="color:var(--cyan)">infrequent.pages.dev/main.js</a> and include it locally:</p>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
           <pre>&lt;script src="./main.js"&gt;&lt;/script&gt;</pre>
@@ -270,15 +268,13 @@ input.addEventListener('change', async () => {
         <h3>Option 3: ES Module Import</h3>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
-          <pre>import { IIIBatcher } from 'https://iii.pages.dev/main.js';</pre>
+          <pre>import { IIIBatcher } from 'https://infrequent.pages.dev/main.js';</pre>
         </div>
         <div class="docs-callout warn"><strong>Note:</strong> The API is exposed both as a global <code>window.IIIBatcher</code> and as a named export for ES modules.</div>
       </div>
 
-      <!-- API REFERENCE -->
       <div class="docs-section" id="api-reference">
         <h2>API Reference</h2>
-
         <h3><code>new IIIBatcher(defaultOptions?)</code></h3>
         <p>Creates a new batcher instance with optional default options.</p>
         <div class="docs-code-block">
@@ -292,7 +288,6 @@ input.addEventListener('change', async () => {
   includePlaceholders: false
 });</pre>
         </div>
-
         <h3><code>batcher.process(files, options?)</code></h3>
         <p>Processes a <code>FileList</code> or array of <code>File</code> objects. Returns a Promise.</p>
         <div class="docs-code-block">
@@ -309,7 +304,6 @@ input.addEventListener('change', async () => {
 // result.totalChars  → number
 // result.fileList    → { name, size, status }[]</pre>
         </div>
-
         <h3><code>batcher.processText(filesArray)</code></h3>
         <p>Process an array of <code>{ name, content }</code> objects directly (no File API needed).</p>
         <div class="docs-code-block">
@@ -320,22 +314,17 @@ input.addEventListener('change', async () => {
   { name: 'app.js', content: 'console.log("hello")' }
 ]);</pre>
         </div>
-
         <h3><code>batcher.on(event, callback)</code></h3>
         <p>Listen to processing events. See <a href="#events" style="color:var(--cyan)">Events</a> section.</p>
-
         <h3><code>batcher.destroy()</code></h3>
         <p>Cleans up event listeners and internal state.</p>
       </div>
 
-      <!-- OPTIONS -->
       <div class="docs-section" id="options">
         <h2>Options</h2>
         <p>Options can be passed to the constructor (as defaults) or to <code>.process()</code> (per-call override).</p>
         <table class="docs-table">
-          <thead>
-            <tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr>
-          </thead>
+          <thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
           <tbody>
             <tr><td><code>labelMode</code></td><td><code>string</code></td><td><code>'numbered'</code></td><td><code>'numbered'</code>, <code>'filename'</code>, or <code>'both'</code></td></tr>
             <tr><td><code>splitMode</code></td><td><code>string</code></td><td><code>'chars'</code></td><td><code>'chars'</code>, <code>'count'</code>, or <code>'none'</code></td></tr>
@@ -349,14 +338,11 @@ input.addEventListener('change', async () => {
         </table>
       </div>
 
-      <!-- RESPONSE -->
       <div class="docs-section" id="response">
         <h2>Response Object</h2>
         <p>The <code>.process()</code> method returns a Promise that resolves to:</p>
         <table class="docs-table">
-          <thead>
-            <tr><th>Property</th><th>Type</th><th>Description</th></tr>
-          </thead>
+          <thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead>
           <tbody>
             <tr><td><code>batches</code></td><td><code>string[]</code></td><td>Array of formatted batch strings</td></tr>
             <tr><td><code>included</code></td><td><code>number</code></td><td>Number of files that were included</td></tr>
@@ -389,14 +375,11 @@ input.addEventListener('change', async () => {
         </div>
       </div>
 
-      <!-- EVENTS -->
       <div class="docs-section" id="events">
         <h2>Events</h2>
         <p>Track progress with event callbacks:</p>
         <table class="docs-table">
-          <thead>
-            <tr><th>Event</th><th>Callback Args</th><th>Description</th></tr>
-          </thead>
+          <thead><tr><th>Event</th><th>Callback Args</th><th>Description</th></tr></thead>
           <tbody>
             <tr><td><code>fileRead</code></td><td><code>{ name, index, total, status }</code></td><td>Fired after each file is read</td></tr>
             <tr><td><code>progress</code></td><td><code>{ percent, current, total }</code></td><td>Progress percentage update</td></tr>
@@ -427,7 +410,6 @@ batcher.on('error', ({ file, error }) => {
         </div>
       </div>
 
-      <!-- EXAMPLES -->
       <div class="docs-section" id="examples">
         <h2>Full Examples</h2>
 
@@ -438,7 +420,7 @@ batcher.on('error', ({ file, error }) => {
 &lt;html&gt;
 &lt;head&gt;
   &lt;title&gt;My Batcher&lt;/title&gt;
-  &lt;script src="https://iii.pages.dev/main.js"&gt;&lt;/script&gt;
+  &lt;script src="https://infrequent.pages.dev/main.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;input type="file" id="files" multiple /&gt;
@@ -573,11 +555,9 @@ for (const [i, batch] of result.batches.entries()) {
         </div>
       </div>
 
-      <!-- POSTMESSAGE -->
       <div class="docs-section" id="postmessage">
         <h2>PostMessage API (Cross-Origin)</h2>
         <p>If you embed III in an iFrame, you can communicate with it using <code>postMessage</code>.</p>
-
         <h3>Send files to III iFrame</h3>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
@@ -591,23 +571,20 @@ iframe.contentWindow.postMessage({
     splitMode: 'chars',
     maxChars: 40000
   }
-}, 'https://iii.pages.dev');
+}, 'https://infrequent.pages.dev');
 
 // Listen for results
 window.addEventListener('message', (e) => {
-  if (e.origin !== 'https://iii.pages.dev') return;
+  if (e.origin !== 'https://infrequent.pages.dev') return;
   if (e.data.type === 'III_RESULT') {
     console.log('Batches:', e.data.result.batches);
     console.log('Included:', e.data.result.included);
   }
 });</pre>
         </div>
-
         <h3>Message types</h3>
         <table class="docs-table">
-          <thead>
-            <tr><th>Direction</th><th>Type</th><th>Data</th></tr>
-          </thead>
+          <thead><tr><th>Direction</th><th>Type</th><th>Data</th></tr></thead>
           <tbody>
             <tr><td>Parent to iFrame</td><td><code>III_CONFIG</code></td><td><code>{ options }</code></td></tr>
             <tr><td>Parent to iFrame</td><td><code>III_PROCESS</code></td><td><code>{ files: [{name, content}] }</code></td></tr>
@@ -618,7 +595,6 @@ window.addEventListener('message', (e) => {
         </table>
       </div>
 
-      <!-- IFRAME -->
       <div class="docs-section" id="iframe">
         <h2>iFrame Embed</h2>
         <p>You can embed the full III app as an iFrame in your site:</p>
@@ -626,7 +602,7 @@ window.addEventListener('message', (e) => {
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
           <pre>&lt;iframe
   id="iii-frame"
-  src="https://iii.pages.dev"
+  src="https://infrequent.pages.dev"
   width="100%"
   height="800"
   style="border: 1px solid #27272a; border-radius: 12px;"
@@ -636,10 +612,8 @@ window.addEventListener('message', (e) => {
         <div class="docs-callout warn"><strong>Tip:</strong> Add <code>allow="clipboard-write"</code> so the copy buttons work inside the iFrame.</div>
       </div>
 
-      <!-- ADVANCED -->
       <div class="docs-section" id="advanced">
         <h2>Advanced Usage</h2>
-
         <h3>Custom binary detection threshold</h3>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
@@ -647,7 +621,6 @@ window.addEventListener('message', (e) => {
   binaryThreshold: 0.1  // 10% suspicious bytes = binary (default 0.15)
 });</pre>
         </div>
-
         <h3>Custom file sorter</h3>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
@@ -655,7 +628,6 @@ window.addEventListener('message', (e) => {
   sortFn: (a, b) => a.size - b.size  // Sort by file size
 });</pre>
         </div>
-
         <h3>Filter files programmatically</h3>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
@@ -666,7 +638,6 @@ window.addEventListener('message', (e) => {
   }
 });</pre>
         </div>
-
         <h3>Custom label formatter</h3>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
@@ -676,7 +647,6 @@ window.addEventListener('message', (e) => {
   }
 });</pre>
         </div>
-
         <h3>Chaining multiple processText calls</h3>
         <div class="docs-code-block">
           <button class="copy-code-btn" onclick="copyCode(this)">Copy</button>
@@ -689,7 +659,6 @@ const allBatches = [...result1.batches, ...result2.batches];</pre>
         </div>
       </div>
 
-      <!-- ERRORS -->
       <div class="docs-section" id="errors">
         <h2>Error Handling</h2>
         <div class="docs-code-block">
@@ -706,7 +675,6 @@ batcher.on('error', ({ file, error }) => {
 });</pre>
         </div>
         <div class="docs-callout danger"><strong>Important:</strong> The <code>.process()</code> method will never throw for individual file read failures. It will skip or placeholder them based on your options. It only throws if no files are provided or a critical internal error occurs.</div>
-
         <h3>Error codes</h3>
         <table class="docs-table">
           <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
@@ -720,19 +688,14 @@ batcher.on('error', ({ file, error }) => {
         </table>
       </div>
 
-      <!-- FAQ -->
       <div class="docs-section" id="faq">
         <h2>FAQ</h2>
-
         <h3>Are files uploaded to a server?</h3>
         <p>No. Everything runs in the browser. Files are read using the browser's <code>FileReader</code> / <code>ArrayBuffer</code> API. Nothing leaves the user's device.</p>
-
         <h3>What browsers are supported?</h3>
         <p>All modern browsers: Chrome, Firefox, Safari, Edge, and Chromium-based mobile browsers. IE is not supported.</p>
-
         <h3>Is there a file size limit?</h3>
         <p>No hard limit, but very large files (100MB+) may cause the browser tab to slow down since everything runs in memory. For best results, use the <code>filterFn</code> option to skip very large files, or set a reasonable <code>maxChars</code>.</p>
-
         <h3>Can I use this with React / Vue / Svelte?</h3>
         <p>Yes. Import the script and use <code>new IIIBatcher()</code> in your component. It's framework-agnostic.</p>
         <div class="docs-code-block">
@@ -757,13 +720,10 @@ function App() {
   );
 }</pre>
         </div>
-
         <h3>Can I style the iFrame embed?</h3>
         <p>The iFrame content has its own styles. You can only style the iFrame container itself (border, size, etc.). For full control, use the JavaScript API instead of the iFrame.</p>
-
         <h3>How do I handle clipboard in an iFrame?</h3>
         <p>Add <code>allow="clipboard-write"</code> to the iFrame tag. Without it, the copy buttons inside the iFrame will fail.</p>
-
         <h3>What's the output format?</h3>
         <p>Each batch is a plain text string. Files are separated by two newlines. Each file entry looks like:</p>
         <div class="docs-code-block">
@@ -774,7 +734,6 @@ function App() {
 another-file.js:
 [file contents here]</pre>
         </div>
-
         <h3>Can I contribute?</h3>
         <p>Yes! III is made by <a href="https://github.com/BufferClick" style="color:var(--cyan)" target="_blank">BufferClick</a>. Reach out on GitHub.</p>
       </div>
